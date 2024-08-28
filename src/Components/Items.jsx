@@ -12,7 +12,7 @@ export default function Items() {
   function UpdateCount(items, Operations) {
     setState((prevState) => {
       const increment = Operations === "plus" ? 1 : -1;
-      //   console.log(items, plus, Math.max(prevState[`${items}Count`] + plus));
+      //   console.log(items, plus, Math.max(prevState[`${items}Count`] + increment));
       return {
         ...prevState,
         [`${items}Count`]: Math.max(prevState[`${items}Count`] + increment, 0),
