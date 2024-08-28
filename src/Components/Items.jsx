@@ -13,14 +13,13 @@ export default function Items() {
     setState((prevState) => {
       const plus = Operations === "plus" ? 1 : -1;
       //   console.log(items, plus, Math.max(prevState[`${items}Count`] + plus));
-
       return {
         ...prevState,
         [`${items}Count`]: Math.max(prevState[`${items}Count`] + plus, 0),
       };
     });
   }
-//Function for btn sell Ice
+  //Function for btn sell Ice
   function handleIceCreamSell() {
     // setShowIceCreamButtons(true);
     setState((prevState) => ({
@@ -28,7 +27,7 @@ export default function Items() {
       showIceCreamButtons: true,
     }));
   }
-  // Function for btn sell Cake 
+  // Function for btn sell Cake
   function handleCakeSell() {
     setState((prevState) => ({
       ...prevState,
