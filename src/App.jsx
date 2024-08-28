@@ -1,12 +1,11 @@
 import "./App.css";
-import Cake from "./Components/Ckake";
-import IceCream from "./Components/IceCream";
+import Items from "./Components/Items";
 
 function App() {
-  return <div className="App">
-    <Cake/>
-    <IceCream/>
-  </div>;
+  return (
+    <div className="App">
+      <Items />
+    </div>
+  );
 }
-
 export default App;
