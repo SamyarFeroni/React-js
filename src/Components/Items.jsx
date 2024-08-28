@@ -11,11 +11,11 @@ export default function Items() {
   // Function for PlusCount And MinusCount
   function UpdateCount(items, Operations) {
     setState((prevState) => {
-      const plus = Operations === "plus" ? 1 : -1;
+      const increment = Operations === "plus" ? 1 : -1;
       //   console.log(items, plus, Math.max(prevState[`${items}Count`] + plus));
       return {
         ...prevState,
-        [`${items}Count`]: Math.max(prevState[`${items}Count`] + plus, 0),
+        [`${items}Count`]: Math.max(prevState[`${items}Count`] + increment, 0),
       };
     });
   }
