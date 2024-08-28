@@ -1,4 +1,5 @@
 import { useState } from "react";
+import View from "./View";
 
 export default function Items() {
   const [state, setState] = useState({
@@ -11,7 +12,7 @@ export default function Items() {
   function UpdateCount(items, Operations) {
     setState((prevState) => {
       const plus = Operations === "plus" ? 1 : -1;
-    //   console.log(items, plus, Math.max(prevState[`${items}Count`] + plus));
+      //   console.log(items, plus, Math.max(prevState[`${items}Count`] + plus));
 
       return {
         ...prevState,
@@ -19,7 +20,7 @@ export default function Items() {
       };
     });
   }
-
+//Function for btn sell Ice
   function handleIceCreamSell() {
     // setShowIceCreamButtons(true);
     setState((prevState) => ({
@@ -27,6 +28,7 @@ export default function Items() {
       showIceCreamButtons: true,
     }));
   }
+  // Function for btn sell Cake 
   function handleCakeSell() {
     setState((prevState) => ({
       ...prevState,
@@ -34,29 +36,11 @@ export default function Items() {
     }));
   }
   return (
-    <div>
-      <h2>
-        Ice Cream
-        <button onClick={handleIceCreamSell}>Sell Ice Cream</button>
-        {state.showIceCreamButtons && (
-          <>
-            <button onClick={() => UpdateCount("iceCream", "plus")}>+</button>
-            <button onClick={() => UpdateCount("iceCream", "minus")}>-</button>
-          </>
-        )}
-        Count: <span>{state.iceCreamCount}</span>
-      </h2>
-      <h2>
-        Cake
-        <button onClick={handleCakeSell}>Sell Cake</button>
-        {state.showCakeButtons && (
-          <>
-            <button onClick={() => UpdateCount("cake", "plus")}>+</button>
-            <button onClick={() => UpdateCount("cake", "minus")}>-</button>
-          </>
-        )}
-        Count: <span>{state.cakeCount}</span>
-      </h2>
-    </div>
+    <View
+      state={state}
+      handleIceCreamSell={handleIceCreamSell}
+      handleCakeSell={handleCakeSell}
+      UpdateCount={UpdateCount}
+    />
   );
 }
