@@ -12,6 +12,14 @@ export default function Items() {
   function UpdateCount(items, Operations) {
     setState((prevState) => {
       const increment = Operations === "plus" ? 1 : -1;
+      //Another way for increment
+    //   let increment ; 
+    //   if(Operations === "plus"){
+    //     increment = 1
+    //   }
+    //   else{
+    //     increment = -1
+    //   }
       //   console.log(items, plus, Math.max(prevState[`${items}Count`] + increment));
       return {
         ...prevState,
